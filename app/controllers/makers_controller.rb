@@ -35,4 +35,5 @@ class MakersController < ApplicationController
   def get_maker
     @maker = Maker.find_by_id(params[:id])
   end
+  
 end

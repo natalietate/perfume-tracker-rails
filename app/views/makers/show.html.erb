@@ -1,11 +1,24 @@
-<h1><%= @maker.name %></h1>
+<h1><%= @maker.brand %></h1>
 <h2>Perfumes</h2>
 
 <ul>
   <%= 'No perfumes listed' if @maker.perfumes.empty? %>
-  <%= @maker.perfumes.each do |perfume| %>
+  <% @maker.perfumes.each do |perfume| %>
   <li>
     <%= link_to perfume.name, maker_perfume_path(@maker, perfume) %>
   </li>
   <% end %>
 </ul>
+
+<div>
+<h3>Add a Perfume</h3>
+<%= form_with(model: Perfume.new, local: true) do |f| %>
+  <%= hidden_field_tag :maker_id, @maker.id %>
+  <%= f.label :name %>
+  <%= f.text_field :name %>
+  <br>
+  <%= f.submit %>
+<% end %>
+</div>
+
+<%= link_to 'Back', perfumes_path%>

@@ -1,2 +1,12 @@
-<h1>Makers#new</h1>
-<p>Find me in app/views/makers/new.html.erb</p>
+<h1>Add a New Maker</h1>
+
+<%= form_with(model: @maker, local: true) do |f| %>
+  <%= f.label :brand %>
+  <%= f.text_field :brand %>
+  <br>
+  <%= f.submit %>
+<% end %>
+
+<br>
+
+<%= link_to 'Back', makers_path %>
