@@ -1,9 +1,9 @@
 <h1>Maker List</h1>
 
 <ul>
-<%= @makers.each do |maker| %>
+<% @makers.each do |maker| %>
   <li>
-    <%= link_to maker.name, maker %>
+    <%= link_to maker.brand, maker %>
   </li>
   <% end %>
 </ul>

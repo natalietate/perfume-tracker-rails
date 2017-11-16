@@ -1,4 +1,5 @@
 class MakersController < ApplicationController
+
   before_action :get_maker, only: [:show, :destroy]
   # before show and destroy routes are called, call get_maker
 
