@@ -11,7 +11,7 @@ class PerfumesController < ApplicationController
   def create
     maker = Maker.find_by_id(params[:maker_id])
     maker.perfumes.create(perfume_params)
-    redirect_tomaker
+    redirect_to maker
   end
 
   private
