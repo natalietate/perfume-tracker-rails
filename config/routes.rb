@@ -1,13 +1,8 @@
 Rails.application.routes.draw do
-  get 'perfumes/index'
+  resources :makers, except: [:edit, :update] do
+    resources :perfumes, only: [:show]
+  end
 
-  get 'perfumes/show'
+  resources :perfumes, only: [:show, :index, :create, :destroy]
 
-  get 'makers/index'
-
-  get 'makers/new'
-
-  get 'makers/show'
-
-  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

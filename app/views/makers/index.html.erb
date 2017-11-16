@@ -1,2 +1,9 @@
-<h1>Makers#index</h1>
-<p>Find me in app/views/makers/index.html.erb</p>
+<h1>Maker List</h1>
+
+<ul>
+<%= @makers.each do |maker| %>
+  <li>
+    <%= link_to maker.name, maker %>
+  </li>
+  <% end %>
+</ul>

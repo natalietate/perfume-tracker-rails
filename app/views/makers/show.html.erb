@@ -1,2 +1,11 @@
-<h1>Makers#show</h1>
-<p>Find me in app/views/makers/show.html.erb</p>
+<h1><%= @maker.name %></h1>
+<h2>Perfumes</h2>
+
+<ul>
+  <%= 'No perfumes listed' if @maker.perfumes.empty? %>
+  <%= @maker.perfumes.each do |perfume| %>
+  <li>
+    <%= link_to perfume.name, maker_perfume_path(@maker, perfume) %>
+  </li>
+  <% end %>
+</ul>
