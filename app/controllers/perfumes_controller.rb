@@ -14,6 +14,11 @@ class PerfumesController < ApplicationController
     redirect_to maker
   end
 
+  def destroy
+    @perfume.destroy
+    redirect_to makers_path
+  end
+
   private
 
   def get_perfume

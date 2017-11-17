@@ -4,6 +4,7 @@
 <% @makers.each do |maker| %>
   <li>
     <%= link_to maker.brand, maker %>
+    <%= link_to 'Delete', maker, method: 'delete', local: true %>
   </li>
   <% end %>
 </ul>

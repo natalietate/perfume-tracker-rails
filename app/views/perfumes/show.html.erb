@@ -1,2 +1,5 @@
-<h1>Perfumes#show</h1>
-<p>Find me in app/views/perfumes/show.html.erb</p>
+<h1><%= @perfume.name %></h1>
+<p>Maker: <%= link_to @perfume.maker.brand, @perfume.maker %></p>
+
+
+<%= link_to 'Delete Perfume', @perfume, method: 'delete', local: true %> - <%= link_to 'Back', @perfume.maker %>
