@@ -26,6 +26,6 @@ class PerfumesController < ApplicationController
   end
 
   def perfume_params
-    params.require(:perfume).permit(:name)
+    params.require(:perfume).permit(:name, :tag_ids)
   end
 end

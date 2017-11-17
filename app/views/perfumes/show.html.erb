@@ -1,5 +1,13 @@
 <h1><%= @perfume.name %></h1>
 <p>Maker: <%= link_to @perfume.maker.brand, @perfume.maker %></p>
 
+<div>
+  <h3>Tags</h3>
+  <ul>
+      <% @perfume.tags.each do |tag| %>
+        <li><%= tag.name %></li>
+      <% end %>
+  </ul>
+</div>
 
 <%= link_to 'Delete Perfume', @perfume, method: 'delete', local: true %> - <%= link_to 'Back', @perfume.maker %>

@@ -17,6 +17,7 @@
   <%= f.label :name %>
   <%= f.text_field :name %>
   <br>
+  <%= f.select :tag_ids, options_from_collection_for_select(Tag.all, 'id', 'name') %>
   <%= f.submit %>
 <% end %>
 </div>
